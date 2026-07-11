@@ -1,0 +1,99 @@
+{
+  "info": {
+    "name": "API Dev Quickstart - Installation Verification",
+    "description": "Use this collection to verify your Java/Maven/IntelliJ/Postman setup for the Fundamentals of API Development course. Start the quickstart-project app first, then run these requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "health"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Service is UP', function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body.status).to.eql('UP');",
+              "    pm.expect(body.service).to.eql('api-dev-quickstart');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Greeting",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/greetings/Learner",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "greetings", "Learner"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Message contains name', function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body.message).to.include('Learner');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "OpenAPI Docs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api-docs",
+          "host": ["{{baseUrl}}"],
+          "path": ["api-docs"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

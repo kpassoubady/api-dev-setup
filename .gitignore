@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Claude Code internal memory
+.claude/
+
+# backup files from cleanup scripts
+*.bak
+
+# Python cache
+__pycache__/
+
+# Node.js dependencies (installed by scripts/build-excalidraw.sh)
+node_modules/
+
+# Maven build output
+quickstart-project/target/
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+
+# scratch/test files
+llm-context/
+target/
+.vscode/
+.devin/config.local.json
+.classpath
+.project
+.settings/
+.mvn/wrapper/maven-wrapper.jar
+.env
