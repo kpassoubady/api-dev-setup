@@ -9,8 +9,6 @@ Click on the link for your operating system to view the detailed setup guide:
 | **macOS** | [macOS Install Guide](./install-mac.md) |
 | **Windows** | [Windows Install Guide](./install-win.md) |
 
----
-
 ## What You Will Install
 
 | Category | Tools / Packages |
@@ -21,9 +19,7 @@ Click on the link for your operating system to view the detailed setup guide:
 | **API Client** | Postman |
 | **Version Control** | Git |
 
-> The course labs are built against a Spring Boot REST API, tested with JUnit5 and Postman, using IntelliJ as the IDE — see [`../catalog/api-dev-am-pm-outline.md`](../catalog/api-dev-am-pm-outline.md) for the full course outline.
-
----
+> The course labs are built against a Spring Boot REST API, tested with JUnit5 and Postman, using IntelliJ as the IDE. See [`../catalog/api-dev-am-pm-outline.md`](../catalog/api-dev-am-pm-outline.md) for the full course outline.
 
 ## Verify Your Installation
 
