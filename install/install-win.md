@@ -100,7 +100,7 @@ mvn -version && echo Maven OK
 git --version && echo Git OK
 ```
 
-Then use the [`quickstart-project`](../quickstart-project/) to confirm IntelliJ, Maven, and Postman work together end to end — see [`../quickstart-project/README.md`](../quickstart-project/README.md) for the steps, or the checklist in [`install.md`](./install.md#quick-verification-checklist).
+Then use the [`quickstart-project`](../quickstart-project/) to confirm IntelliJ, Maven, and Postman work together end to end. See [`../quickstart-project/README.md`](../quickstart-project/README.md) for the steps, or the checklist in [`install.md`](./install.md#quick-verification-checklist).
 
 ## 7. Troubleshooting
 
