@@ -2,9 +2,12 @@
 workspace:
   id: 413707f2-cc6a-41a2-a258-b40b1c7130c6
 
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
 cloudResources:
   collections:
     ../postman/collections/API Dev Quickstart - Installation Verification: c750dde7-c2f5-4ff4-ac61-b4b47cb6c980
+    ../postman/collections/API Dev Quickstart - Installation Verification Copy: 58453e28-d194-405d-bea0-2c7be6eb9e2f
 
 # All resources in the `postman/` folder are automatically registered in Local View.
 # Point to additional files outside the `postman/` folder to register them individually. Example:

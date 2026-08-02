@@ -1,0 +1,4 @@
+$kind: collection
+description: Use this collection to verify your Java/Maven/IntelliJ/Postman setup for the Fundamentals of API Development course. Start the quickstart-project app first, then run these requests.
+variables:
+  baseUrl: http://localhost:8080
