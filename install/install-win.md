@@ -1,6 +1,6 @@
 # Installation Guide (Windows)
 
-This guide walks through the development environment setup on Windows 10/11 for the **Fundamentals of API Development** course: JDK, Maven, IntelliJ IDEA, Postman, and Git.
+Development environment setup on Windows 10/11 for the **Fundamentals of API Development** course: JDK, Maven, IntelliJ IDEA (or VS Code), Postman, and Git.
 
 <!-- markdownlint-disable MD033 MD029 MD010-->
 <!-- TOC -->
@@ -10,9 +10,10 @@ This guide walks through the development environment setup on Windows 10/11 for 
   - [2. Install Maven](#2-install-maven)
   - [3. Install Git](#3-install-git)
   - [4. Install IntelliJ IDEA](#4-install-intellij-idea)
-  - [5. Install Postman](#5-install-postman)
-  - [6. Verification](#6-verification)
-  - [7. Troubleshooting](#7-troubleshooting)
+  - [5. Install VS Code (alternative IDE)](#5-install-vs-code-alternative-ide)
+  - [6. Install Postman](#6-install-postman)
+  - [7. Verification](#7-verification)
+  - [8. Troubleshooting](#8-troubleshooting)
 
 <!-- /TOC -->
 
@@ -86,11 +87,45 @@ git --version
 
 Download IntelliJ IDEA (Community or Ultimate) from <https://www.jetbrains.com/idea/download/> and run the installer. Open IntelliJ IDEA once after installing so it finishes its first-run setup.
 
-## 5. Install Postman
+## 5. Install VS Code (alternative IDE)
+
+If you prefer VS Code over IntelliJ IDEA, install it and the required Java extensions. Skip this section if you installed IntelliJ in step 4; you only need one IDE.
+
+Download VS Code from <https://code.visualstudio.com/> and run the installer (default settings are fine).
+
+Open VS Code once after installing so it finishes its first-run setup.
+
+### Install Java Extensions
+
+Open VS Code, press `Ctrl+Shift+X` to open the Extensions view, and install these three extensions:
+
+| Extension | Marketplace ID | Purpose |
+|-----------|---------------|---------|
+| **Extension Pack for Java** | `vscjava.vscode-java-pack` | Bundles Language Support for Java, Debugger, Test Runner, Maven, and Project Manager: everything needed to work with the course's Spring Boot projects |
+| **Spring Boot Extension Pack** | `vmware.vscode-boot-dev-pack` | Spring Tools for VS Code: content assist for `application.properties`/`.yml`, Spring-specific code navigation (`@/` for request mappings, `@+` for beans), and a Spring Boot Dashboard to start, stop, and debug projects |
+| **Code Runner** | `formulahendry.vscode-code-runner` | Run Java and many other languages directly from the editor with a single click or keyboard shortcut |
+
+Alternatively, install all three from a terminal (Command Prompt or PowerShell):
+
+```cmd
+code --install-extension vscjava.vscode-java-pack
+code --install-extension vmware.vscode-boot-dev-pack
+code --install-extension formulahendry.vscode-code-runner
+```
+
+To open the quickstart project in VS Code:
+
+```cmd
+code ..\quickstart-project
+```
+
+VS Code will detect the `pom.xml` and prompt you to import the Maven project. Accept it, and the Java extension pack will configure the classpath automatically.
+
+## 6. Install Postman
 
 Download Postman from <https://www.postman.com/downloads/> and run the installer. Open Postman once and sign in (or continue without an account) so it's ready for the labs.
 
-## 6. Verification
+## 7. Verification
 
 Run this end-to-end check in a new Command Prompt:
 
@@ -100,9 +135,9 @@ mvn -version && echo Maven OK
 git --version && echo Git OK
 ```
 
-Then use the [`quickstart-project`](../quickstart-project/) to confirm IntelliJ, Maven, and Postman work together end to end. See [`../quickstart-project/README.md`](../quickstart-project/README.md) for the steps, or the checklist in [`install.md`](./install.md#quick-verification-checklist).
+Then use the [quickstart-project](https://github.com/kpassoubady/api-dev-setup/tree/main/quickstart-project) to confirm IntelliJ, Maven, and Postman work together end to end. See the [quickstart-project README](https://github.com/kpassoubady/api-dev-setup/blob/main/quickstart-project/README.md) for the steps, or the checklist in the [Installation Instructions](https://github.com/kpassoubady/api-dev-setup/blob/main/install/install.md#quick-verification-checklist).
 
-## 7. Troubleshooting
+## 8. Troubleshooting
 
 - **`java`/`mvn` not recognized**: Restart Command Prompt after setting environment variables, and double-check `Path` includes `%JAVA_HOME%\bin` and `%M2_HOME%\bin`.
 - **Wrong Java version picked up**: Run `echo %JAVA_HOME%` and confirm it points at the JDK you intend to use.
