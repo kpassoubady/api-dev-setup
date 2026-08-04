@@ -133,6 +133,7 @@ Run this end-to-end check in a new Command Prompt:
 java -version && echo Java OK
 mvn -version && echo Maven OK
 git --version && echo Git OK
+code --version && echo VS Code OK
 ```
 
 Then use the [quickstart-project](https://github.com/kpassoubady/api-dev-setup/tree/main/quickstart-project) to confirm IntelliJ, Maven, and Postman work together end to end. See the [quickstart-project README](https://github.com/kpassoubady/api-dev-setup/blob/main/quickstart-project/README.md) for the steps, or the checklist in the [Installation Instructions](https://github.com/kpassoubady/api-dev-setup/blob/main/install/install.md#quick-verification-checklist).

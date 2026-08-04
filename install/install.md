@@ -39,7 +39,8 @@ Full steps are in the [quickstart-project README](https://github.com/kpassoubady
 - [ ] `java -version` shows 17+ (21 recommended)
 - [ ] `mvn -version` works and reports the same Java version
 - [ ] `git --version` works
-- [ ] IntelliJ IDEA or VS Code opens and recognizes `quickstart-project` as a Maven project
+- [ ] IntelliJ IDEA opens and recognizes `quickstart-project` as a Maven project
+- [ ] VS Code (with Java extensions) opens and recognizes `quickstart-project` as a Maven project
 - [ ] Postman is installed and can send a request
 - [ ] `mvn spring-boot:run` starts `quickstart-project` on <http://localhost:8080>
 - [ ] `GET http://localhost:8080/api/v1/health` returns `{"status":"UP", ...}` (via browser, curl, or Postman)
