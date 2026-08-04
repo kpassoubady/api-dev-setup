@@ -1,6 +1,6 @@
 # Installation Guide (macOS)
 
-This guide walks through the development environment setup on macOS for the **Fundamentals of API Development** course: JDK, Maven, IntelliJ IDEA, Postman, and Git.
+Development environment setup on macOS for the **Fundamentals of API Development** course: JDK, Maven, IntelliJ IDEA (or VS Code), Postman, and Git.
 
 <!-- markdownlint-disable MD033 MD029 MD010-->
 <!-- TOC -->
@@ -11,9 +11,10 @@ This guide walks through the development environment setup on macOS for the **Fu
   - [3. Install Maven](#3-install-maven)
   - [4. Install Git](#4-install-git)
   - [5. Install IntelliJ IDEA](#5-install-intellij-idea)
-  - [6. Install Postman](#6-install-postman)
-  - [7. Verification](#7-verification)
-  - [8. Troubleshooting](#8-troubleshooting)
+  - [6. Install VS Code (alternative IDE)](#6-install-vs-code-alternative-ide)
+  - [7. Install Postman](#7-install-postman)
+  - [8. Verification](#8-verification)
+  - [9. Troubleshooting](#9-troubleshooting)
 
 <!-- /TOC -->
 
@@ -109,7 +110,45 @@ brew install --cask intellij-idea-ce
 
 Open IntelliJ IDEA once after installing so it finishes its first-run setup.
 
-## 6. Install Postman
+## 6. Install VS Code (alternative IDE)
+
+If you prefer VS Code over IntelliJ IDEA, install it and the required Java extensions. Skip this section if you installed IntelliJ in step 5; you only need one IDE.
+
+Download VS Code from <https://code.visualstudio.com/>, or install via Homebrew:
+
+```bash
+brew install --cask visual-studio-code
+```
+
+Open VS Code once after installing so it finishes its first-run setup.
+
+### Install Java Extensions
+
+Open VS Code, press `Cmd+Shift+X` to open the Extensions view, and install these three extensions:
+
+| Extension | Marketplace ID | Purpose |
+|-----------|---------------|---------|
+| **Extension Pack for Java** | `vscjava.vscode-java-pack` | Bundles Language Support for Java, Debugger, Test Runner, Maven, and Project Manager: everything needed to work with the course's Spring Boot projects |
+| **Spring Boot Extension Pack** | `vmware.vscode-boot-dev-pack` | Spring Tools for VS Code: content assist for `application.properties`/`.yml`, Spring-specific code navigation (`@/` for request mappings, `@+` for beans), and a Spring Boot Dashboard to start, stop, and debug projects |
+| **Code Runner** | `formulahendry.vscode-code-runner` | Run Java and many other languages directly from the editor with a single click or keyboard shortcut |
+
+Alternatively, install all three from the terminal:
+
+```bash
+code --install-extension vscjava.vscode-java-pack
+code --install-extension vmware.vscode-boot-dev-pack
+code --install-extension formulahendry.vscode-code-runner
+```
+
+To open the quickstart project in VS Code:
+
+```bash
+code ../quickstart-project
+```
+
+VS Code will detect the `pom.xml` and prompt you to import the Maven project. Accept it, and the Java extension pack will configure the classpath automatically.
+
+## 7. Install Postman
 
 Download Postman from <https://www.postman.com/downloads/>, or install via Homebrew:
 
@@ -119,7 +158,7 @@ brew install --cask postman
 
 Open Postman once and sign in (or continue without an account) so it's ready for the labs.
 
-## 7. Verification
+## 8. Verification
 
 Run this end-to-end check before class:
 
@@ -129,9 +168,9 @@ mvn -version && echo "✓ Maven OK"
 git --version && echo "✓ Git OK"
 ```
 
-Then use the [`quickstart-project`](../quickstart-project/) to confirm IntelliJ, Maven, and Postman work together end to end. See [`../quickstart-project/README.md`](../quickstart-project/README.md) for the steps, or the checklist in [`install.md`](./install.md#quick-verification-checklist).
+Then use the [quickstart-project](https://github.com/kpassoubady/api-dev-setup/tree/main/quickstart-project) to confirm IntelliJ, Maven, and Postman work together end to end. See the [quickstart-project README](https://github.com/kpassoubady/api-dev-setup/blob/main/quickstart-project/README.md) for the steps, or the checklist in the [Installation Instructions](https://github.com/kpassoubady/api-dev-setup/blob/main/install/install.md#quick-verification-checklist).
 
-## 8. Troubleshooting
+## 9. Troubleshooting
 
 - **`java`/`mvn` not found after install**: Restart your terminal, or re-run `source ~/.zshrc`.
 - **Wrong Java version picked up**: Run `/usr/libexec/java_home -V` to list installed JDKs, and confirm `JAVA_HOME` points at the one you want.

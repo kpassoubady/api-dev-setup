@@ -1,6 +1,6 @@
 # API Dev Quickstart
 
-A minimal Spring Boot REST API used to verify your installation for the **Fundamentals of API Development** course. It doesn't teach any course content by itself — it's just a fast way to confirm that Java, Maven, IntelliJ IDEA, and Postman are all working together before Day 1.
+A minimal Spring Boot REST API used to verify your installation for the **Fundamentals of API Development** course. It doesn't teach any course content by itself; it's just a fast way to confirm that Java, Maven, IntelliJ IDEA (or VS Code), and Postman are all working together before Day 1.
 
 ## Prerequisites
 
@@ -21,6 +21,12 @@ mvn spring-boot:run
 ```
 
 The app starts on port 8080. Leave it running and move to the "Verify with Postman" section below. Stop it anytime with `Ctrl+C`.
+
+## Open in VS Code
+
+1. Launch VS Code.
+2. **File > Open Folder...** and select the `quickstart-project` folder.
+3. VS Code will detect `pom.xml` and prompt you to import the Maven project. Accept it.
 
 ## Run from IntelliJ IDEA
 
@@ -47,7 +53,7 @@ Swagger UI (interactive API docs) is available at <http://localhost:8080/swagger
 1. Open Postman.
 2. **Import** the collection at [`postman/api-dev-quickstart.postman_collection.json`](./postman/api-dev-quickstart.postman_collection.json).
 3. With the app running, click **Run** on the collection (or send each request individually).
-4. All three requests — `Health Check`, `Greeting`, and `OpenAPI Docs` — should return status `200` and pass their built-in tests.
+4. All three requests, `Health Check`, `Greeting`, and `OpenAPI Docs`, should return status `200` and pass their built-in tests.
 
 ## Run the JUnit5 Tests
 
@@ -57,7 +63,7 @@ From the command line:
 mvn test
 ```
 
-Or in IntelliJ: right-click the `src/test/java` folder and choose **Run 'All Tests'**.
+Or in IntelliJ or VS Code: right-click the `src/test/java` folder and choose **Run 'All Tests'**.
 
 Both test classes (`HealthControllerTest`, `GreetingControllerTest`) should pass.
 
@@ -90,7 +96,7 @@ quickstart-project/
 
 ### Free Up Port 8080
 
-Useful any time port 8080 is already taken — not just during this quickstart — for example if a previous `mvn spring-boot:run` was left running or another app grabbed the port.
+Useful any time port 8080 is already taken, not just during this quickstart, for example if a previous `mvn spring-boot:run` was left running or another app grabbed the port.
 
 **macOS / Linux:**
 
