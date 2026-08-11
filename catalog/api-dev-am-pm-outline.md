@@ -58,41 +58,47 @@ Labs build on a shared Spring Boot REST API example, extended lab by lab. You'll
 
 Delivered once for the morning cohort and once (repeated) for the afternoon cohort.
 
-### 1. Welcome, Learner Introductions & Course Objectives (15 min)
+### 1. Welcome, Learner Introductions & Course Objectives
 
 Course arc preview: what's covered across the 4 days.
 
-### 2. APIs: Purpose, Nomenclature & Types (35 min)
+### 2. APIs: Purpose, Nomenclature & Types
 - APIs: purpose and nomenclature
 - Benefits and drawbacks of APIs
 - Key terms in API development
 - API types: Open, Partner, Internal
 
-### Kahoot 1 (10 min)
+### Kahoot 1
 
-### Bio Break (10 min)
+### Bio Break
 
-### 3. API Protocols Overview: REST, SOAP & RPC (30 min)
+### 3. API Protocols Overview: REST, SOAP & RPC
 
-### Bio Break (10 min)
+### 4. Breakout 1: Lab 1.0: Classifying API Audience Types
+- Slides: `day1/slides/04-breakout-lab-1-0.md`
+- Classify every endpoint in the quickstart API by audience type (Open, Partner, Internal)
+- Identify which response fields are safe for each audience, and discover what undocumented endpoints reveal
 
-### 4. RESTful APIs: The Basics (35 min)
+### Bio Break
+
+### 5. RESTful APIs: The Basics
 - Drawbacks of not having standards
 - Common standards: HTTP methods, status codes, resource naming
 
-### 5. Breakout 1: Lab 1.1: Analyzing an Existing API (30 min)
-- Analyze an existing API to identify its protocol and standards adherence
+### 6. Breakout 2: Lab 1.1: Analyzing an Existing API
+- Slides: `day1/slides/06-breakout-lab-1-1.md`
+- Use Postman to send requests against an existing API and inspect its responses, identifying its protocol and standards adherence
 - Stretch goals: compare a second API against the same checklist; document where it deviates from REST conventions
 
-### Bio Break (10 min)
+### Bio Break
 
-### Kahoot 2 (10 min)
+### Kahoot 2
 
-### 6. Discussion & Buffer: API Types/Protocols Deep-Dive, Q&A (35 min)
-- Open discussion on API types and protocol trade-offs from Lab 1.1
+### 7. Discussion & Buffer: API Types/Protocols Deep-Dive, Q&A
+- Open discussion on API types and protocol trade-offs from Labs 1.0 and 1.1
 - Flex time: catch-up room for cohorts running behind, or extended Lab 1.1 stretch goals
 
-### 7. Day 1 Wrap-up & Day 2 Preview (10 min)
+### 8. Day 1 Wrap-up & Day 2 Preview
 
 Day 1 Deliverable: Working understanding of API purpose, types, and protocols; a completed protocol/standards analysis of an existing API (Lab 1.1).
 
@@ -100,40 +106,40 @@ Day 1 Deliverable: Working understanding of API purpose, types, and protocols; a
 
 Delivered once for the morning cohort and once (repeated) for the afternoon cohort. Continuation of Day 1 for the same cohort.
 
-### 1. Day 2 Kickoff & Day 1 Recap (10 min)
+### 1. Day 2 Kickoff & Day 1 Recap
 
-### 2. API Contracts: Standards & OpenAPI/Swagger (35 min)
+### 2. API Contracts: Standards & OpenAPI/Swagger
 - Drawbacks of not having standards
 - Summary of common standards (OpenAPI/Swagger)
 
-### Kahoot 1 (10 min)
+### Kahoot 1
 
-### Bio Break (10 min)
+### Bio Break
 
-### 3. Breakout 1: Lab 1.2: Writing an OpenAPI Specification (30 min)
+### 3. Breakout 1: Lab 1.2: Writing an OpenAPI Specification
 - Write an OpenAPI specification for a basic resource
 - Stretch goals: add request/response examples and error schemas
 
-### Bio Break (10 min)
+### Bio Break
 
-### 4. Documenting APIs: Standards & Tools (35 min)
+### 4. Documenting APIs: Standards & Tools
 - Drawbacks of not having standards
 - Summary of common standards and tools
 
-### 5. Breakout 2: Lab 1.3: Peer Review & Interactive Docs (30 min)
+### 5. Breakout 2: Lab 1.3: Peer Review & Interactive Docs
 - Peer review of API contracts
 - Generate interactive documentation (Swagger UI)
 - Stretch goals: annotate edge cases; add auth documentation to the spec
 
-### Bio Break (10 min)
+### Bio Break
 
-### Kahoot 2 (10 min)
+### Kahoot 2
 
-### 6. Design Lab Discussion: Contract-First vs. Code-First (40 min)
+### 6. Design Lab Discussion: Contract-First vs. Code-First
 - Comparing contract-first and code-first workflows using Postman/Swagger tooling
 - Group review of Lab 1.2/1.3 outputs
 
-### 7. Day 2 Wrap-up & Day 3 Preview (10 min)
+### 7. Day 2 Wrap-up & Day 3 Preview
 
 Day 2 Deliverable: An OpenAPI specification for a basic resource, peer-reviewed, with generated interactive documentation (Labs 1.2-1.3).
 
@@ -141,40 +147,40 @@ Day 2 Deliverable: An OpenAPI specification for a basic resource, peer-reviewed,
 
 Delivered once for the morning cohort and once (repeated) for the afternoon cohort. Continuation of Day 2 for the same cohort.
 
-### 1. Day 3 Kickoff & Day 2 Recap (10 min)
+### 1. Day 3 Kickoff & Day 2 Recap
 
-### 2. API Lifecycle: Overview & Versioning (35 min)
+### 2. API Lifecycle: Overview & Versioning
 - API lifecycle overview
 - API versioning
 - Review of most common approaches to lifecycle (pros and cons)
 
-### Kahoot 1 (10 min)
+### Kahoot 1
 
-### Bio Break (10 min)
+### Bio Break
 
-### 3. Breakout 1: Lab 2.1: Designing a Non-Breaking Version Strategy (30 min)
+### 3. Breakout 1: Lab 2.1: Designing a Non-Breaking Version Strategy
 - Design a non-breaking version strategy for an evolving API
 - Stretch goals: draft a deprecation/sunset policy; handle a breaking-change edge case
 
-### Bio Break (10 min)
+### Bio Break
 
-### 4. Security for APIs: Standards (35 min)
+### 4. Security for APIs: Standards
 - Drawbacks of not having standards
 - Common standards: authentication, authorization, rate limiting
 
-### 5. Breakout 2: Lab 2.2: Implementing Basic API Security Rules (30 min)
+### 5. Breakout 2: Lab 2.2: Implementing Basic API Security Rules
 - Implement or configure basic API security rules on the Spring Boot API
 - Stretch goals: add rate-limit tiers; validate auth flows with a Postman collection
 
-### Bio Break (10 min)
+### Bio Break
 
-### Kahoot 2 (10 min)
+### Kahoot 2
 
-### 6. Lifecycle & Security Standards Deep-Dive, Q&A (40 min)
+### 6. Lifecycle & Security Standards Deep-Dive, Q&A
 - Drawbacks of skipping standards for both lifecycle and security, with real-world examples
 - Group review of Lab 2.1/2.2 outputs
 
-### 7. Day 3 Wrap-up & Day 4 Preview (10 min)
+### 7. Day 3 Wrap-up & Day 4 Preview
 
 Day 3 Deliverable: A non-breaking versioning strategy (Lab 2.1) and configured basic security rules (Lab 2.2) on the shared API.
 
@@ -182,37 +188,37 @@ Day 3 Deliverable: A non-breaking versioning strategy (Lab 2.1) and configured b
 
 Delivered once for the morning cohort and once (repeated) for the afternoon cohort. Continuation of Day 3 for the same cohort.
 
-### 1. Day 4 Kickoff & Day 3 Recap (10 min)
+### 1. Day 4 Kickoff & Day 3 Recap
 
-### 2. DevOps in API Development: Overview (30 min)
+### 2. DevOps in API Development: Overview
 
-### Kahoot 1 (10 min)
+### Kahoot 1
 
-### Bio Break (10 min)
+### Bio Break
 
-### 3. API Ecosystem (35 min)
+### 3. API Ecosystem
 - API First strategy
 - DevOps (CI/CD, automated testing)
 - API security within the ecosystem
 - The case for deep knowledge
 
-### Bio Break (10 min)
+### Bio Break
 
-### 4. Breakout 1: Lab 2.3: Simulating an Automated API Test Suite (30 min)
+### 4. Breakout 1: Lab 2.3: Simulating an Automated API Test Suite
 - Build a JUnit5 test suite for the Spring Boot API, run from IntelliJ
 - Stretch goals: add negative test cases; integrate a Postman collection runner
 
-### Kahoot 2 (10 min)
+### Kahoot 2
 
-### Bio Break (10 min)
+### Bio Break
 
-### 5. Breakout 2: Lab 2.4: Capstone Exercise (40 min)
+### 5. Breakout 2: Lab 2.4: Capstone Exercise
 
 Capstone exercise integrating design, documentation, versioning, security, and testing from Days 1-4.
 
-### 6. Review of Capstone Solutions & Discussion (35 min)
+### 6. Review of Capstone Solutions & Discussion
 
-### 7. Course Recap, Final Q&A & Next Steps (10 min)
+### 7. Course Recap, Final Q&A & Next Steps
 
 Day 4 Deliverable: Completed capstone integrating contract design, documentation, versioning, security, and an automated JUnit5 test suite.
 
@@ -225,14 +231,15 @@ Day 4 Deliverable: Completed capstone integrating contract design, documentation
 | Welcome, Learner Introductions & Course Objectives | 15 min |
 | APIs: Purpose, Nomenclature & Types | 35 min |
 | Kahoot 1 | 10 min |
-| Bio Break | 10 min |
+| Bio Break | 15 min |
 | API Protocols Overview: REST, SOAP & RPC | 30 min |
+| Breakout 1: Lab 1.0: Classifying API Audience Types | 15 min |
 | Bio Break | 10 min |
-| RESTful APIs: The Basics | 35 min |
-| Breakout 1: Lab 1.1: Analyzing an Existing API | 30 min |
+| RESTful APIs: The Basics | 30 min |
+| Breakout 2: Lab 1.1: Analyzing an Existing API | 30 min |
 | Bio Break | 10 min |
 | Kahoot 2 | 10 min |
-| Discussion & Buffer: API Types/Protocols Deep-Dive, Q&A | 35 min |
+| Discussion & Buffer: API Types/Protocols Deep-Dive, Q&A | 20 min |
 | Day 1 Wrap-up & Day 2 Preview | 10 min |
 | **Total** | **240 min** |
 
@@ -240,54 +247,54 @@ Day 4 Deliverable: Completed capstone integrating contract design, documentation
 
 | Topic | Duration |
 |---|---|
-| Day 2 Kickoff & Day 1 Recap | 10 min |
+| Day 2 Kickoff & Day 1 Recap | 15 min |
 | API Contracts: Standards & OpenAPI/Swagger | 35 min |
 | Kahoot 1 | 10 min |
-| Bio Break | 10 min |
-| Breakout 1: Lab 1.2: Writing an OpenAPI Specification | 30 min |
+| Bio Break | 20 min |
+| Breakout 1: Lab 1.2: Writing an OpenAPI Specification | 25 min |
 | Bio Break | 10 min |
 | Documenting APIs: Standards & Tools | 35 min |
-| Breakout 2: Lab 1.3: Peer Review & Interactive Docs | 30 min |
+| Breakout 2: Lab 1.3: Peer Review & Interactive Docs | 25 min |
 | Bio Break | 10 min |
 | Kahoot 2 | 10 min |
-| Design Lab Discussion: Contract-First vs. Code-First | 40 min |
-| Day 2 Wrap-up & Day 3 Preview | 10 min |
+| Design Lab Discussion: Contract-First vs. Code-First | 25 min |
+| Day 2 Wrap-up & Day 3 Preview | 20 min |
 | **Total** | **240 min** |
 
 ### Day 3 (4 hours / 240 min)
 
 | Topic | Duration |
 |---|---|
-| Day 3 Kickoff & Day 2 Recap | 10 min |
+| Day 3 Kickoff & Day 2 Recap | 15 min |
 | API Lifecycle: Overview & Versioning | 35 min |
 | Kahoot 1 | 10 min |
-| Bio Break | 10 min |
-| Breakout 1: Lab 2.1: Designing a Non-Breaking Version Strategy | 30 min |
+| Bio Break | 20 min |
+| Breakout 1: Lab 2.1: Designing a Non-Breaking Version Strategy | 25 min |
 | Bio Break | 10 min |
 | Security for APIs: Standards | 35 min |
-| Breakout 2: Lab 2.2: Implementing Basic API Security Rules | 30 min |
+| Breakout 2: Lab 2.2: Implementing Basic API Security Rules | 25 min |
 | Bio Break | 10 min |
 | Kahoot 2 | 10 min |
-| Lifecycle & Security Standards Deep-Dive, Q&A | 40 min |
-| Day 3 Wrap-up & Day 4 Preview | 10 min |
+| Lifecycle & Security Standards Deep-Dive, Q&A | 25 min |
+| Day 3 Wrap-up & Day 4 Preview | 20 min |
 | **Total** | **240 min** |
 
 ### Day 4 (4 hours / 240 min)
 
 | Topic | Duration |
 |---|---|
-| Day 4 Kickoff & Day 3 Recap | 10 min |
+| Day 4 Kickoff & Day 3 Recap | 15 min |
 | DevOps in API Development: Overview | 30 min |
 | Kahoot 1 | 10 min |
+| Bio Break | 20 min |
+| API Ecosystem | 30 min |
 | Bio Break | 10 min |
-| API Ecosystem | 35 min |
-| Bio Break | 10 min |
-| Breakout 1: Lab 2.3: Simulating an Automated API Test Suite | 30 min |
+| Breakout 1: Lab 2.3: Simulating an Automated API Test Suite | 25 min |
 | Kahoot 2 | 10 min |
 | Bio Break | 10 min |
-| Breakout 2: Lab 2.4: Capstone Exercise | 40 min |
+| Breakout 2: Lab 2.4: Capstone Exercise | 25 min |
 | Review of Capstone Solutions & Discussion | 35 min |
-| Course Recap, Final Q&A & Next Steps | 10 min |
+| Course Recap, Final Q&A & Next Steps | 20 min |
 | **Total** | **240 min** |
 
 Combined Total Duration: 16 hours (960 minutes) across 4 sessions / 4 days, run twice per day for 2 cohorts.
