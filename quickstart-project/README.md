@@ -38,6 +38,7 @@ Open `src/main/java/com/apidev/quickstart/QuickstartApplication.java` and click 
 curl http://localhost:8080/api/v1/health
 curl http://localhost:8080/api/v1/greetings/YourName
 curl "http://localhost:8080/api/v1/currency/usd-to-inr?amount=100"
+curl "http://localhost:8080/api/v1/temperature/fahrenheit-to-celsius?fahrenheit=212"
 ```
 
 You should see something like:
@@ -46,6 +47,7 @@ You should see something like:
 {"status":"UP","service":"api-dev-quickstart"}
 {"message":"Hello, YourName! Your API dev setup is working."}
 {"from":"USD","to":"INR","amount":100.0,"rate":83.12,"convertedAmount":8312.0}
+{"fahrenheit":212.0,"celsius":100.0}
 ```
 
 `rate` and `convertedAmount` vary slightly because the demo service adds a small random jitter.
@@ -92,7 +94,7 @@ To enrich the generated spec with descriptions, examples, and error responses, a
 1. Open Postman.
 2. **Import** the collection at [`postman/api-dev-quickstart.postman_collection.json`](./postman/api-dev-quickstart.postman_collection.json).
 3. With the app running, click **Run** on the collection (or send each request individually).
-4. All four requests — `Health Check`, `Greeting`, `Currency Conversion`, and `OpenAPI Docs` — should return status `200` and pass their built-in tests.
+4. All five requests — `Health Check`, `Greeting`, `Currency Conversion`, `Temperature Conversion`, and `OpenAPI Docs` — should return status `200` and pass their built-in tests.
 
 ## Run the JUnit5 Tests
 
@@ -104,7 +106,7 @@ mvn test
 
 Or in IntelliJ or VS Code: right-click the `src/test/java` folder and choose **Run 'All Tests'**.
 
-All test classes (`HealthControllerTest`, `GreetingControllerTest`, `CurrencyControllerTest`, and `CurrencyConversionServiceTest`) should pass.
+All test classes (`HealthControllerTest`, `GreetingControllerTest`, `CurrencyControllerTest`, `TemperatureControllerTest`, and `CurrencyConversionServiceTest`) should pass.
 
 ## Project Structure
 
@@ -120,7 +122,8 @@ quickstart-project/
     │   │   ├── controller/
     │   │   │   ├── HealthController.java
     │   │   │   ├── GreetingController.java
-    │   │   │   └── CurrencyController.java
+    │   │   │   ├── CurrencyController.java
+    │   │   │   └── TemperatureController.java
     │   │   └── service/
     │   │       └── CurrencyConversionService.java
     │   └── resources/application.properties
@@ -129,7 +132,8 @@ quickstart-project/
             ├── controller/
             │   ├── HealthControllerTest.java
             │   ├── GreetingControllerTest.java
-            │   └── CurrencyControllerTest.java
+            │   ├── CurrencyControllerTest.java
+            │   └── TemperatureControllerTest.java
             └── service/
                 └── CurrencyConversionServiceTest.java
 ```

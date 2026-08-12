@@ -110,6 +110,42 @@
       ]
     },
     {
+      "name": "Temperature Conversion",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/temperature/fahrenheit-to-celsius?fahrenheit=212",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "temperature", "fahrenheit-to-celsius"],
+          "query": [
+            {
+              "key": "fahrenheit",
+              "value": "212"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Converts Fahrenheit to Celsius', function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body.fahrenheit).to.eql(212);",
+              "    pm.expect(body.celsius).to.eql(100);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "name": "OpenAPI Docs",
       "request": {
         "method": "GET",
