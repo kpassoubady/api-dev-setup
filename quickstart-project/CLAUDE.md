@@ -23,7 +23,8 @@ quickstart-project/
 │   ├── controller/
 │   │   ├── HealthController.java
 │   │   ├── GreetingController.java
-│   │   └── CurrencyController.java
+│   │   ├── CurrencyController.java
+│   │   └── TemperatureController.java
 │   └── service/
 │       └── CurrencyConversionService.java
 ├── src/main/resources/
@@ -32,7 +33,8 @@ quickstart-project/
     ├── controller/
     │   ├── HealthControllerTest.java
     │   ├── GreetingControllerTest.java
-    │   └── CurrencyControllerTest.java
+    │   ├── CurrencyControllerTest.java
+    │   └── TemperatureControllerTest.java
     └── service/
         └── CurrencyConversionServiceTest.java
 ```
@@ -44,6 +46,7 @@ quickstart-project/
 | GET | `/api/v1/health` | Health check: `{"status":"UP","service":"api-dev-quickstart"}` |
 | GET | `/api/v1/greetings/{name}` | Personalized greeting |
 | GET | `/api/v1/currency/usd-to-inr?amount={amount}` | USD-to-INR conversion demo |
+| GET | `/api/v1/temperature/fahrenheit-to-celsius?fahrenheit={value}` | Fahrenheit-to-Celsius conversion demo |
 | GET | `/api-docs` / `/api-docs.yaml` | Raw OpenAPI spec |
 | GET | `/swagger-ui.html` | Swagger UI interactive docs |
 | GET | `/redoc.html` | Redoc reference layout |
@@ -62,6 +65,7 @@ Verify with curl:
 curl http://localhost:8080/api/v1/health
 curl http://localhost:8080/api/v1/greetings/Learner
 curl "http://localhost:8080/api/v1/currency/usd-to-inr?amount=100"
+curl "http://localhost:8080/api/v1/temperature/fahrenheit-to-celsius?fahrenheit=100"
 ```
 
 ## Run Tests
