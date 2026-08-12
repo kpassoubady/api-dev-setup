@@ -1,0 +1,4 @@
+$kind: collection
+description: Complete collection of endpoints to audit the API manually for Lab 1.1.
+variables:
+  baseUrl: http://localhost:8080

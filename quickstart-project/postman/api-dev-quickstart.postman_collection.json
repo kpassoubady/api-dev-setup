@@ -71,6 +71,45 @@
       ]
     },
     {
+      "name": "Currency Conversion",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/currency/usd-to-inr?amount=100",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "currency", "usd-to-inr"],
+          "query": [
+            {
+              "key": "amount",
+              "value": "100"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Converts USD to INR', function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body.from).to.eql('USD');",
+              "    pm.expect(body.to).to.eql('INR');",
+              "    pm.expect(body.amount).to.eql(100);",
+              "    pm.expect(body.rate).to.be.above(0);",
+              "    pm.expect(body.convertedAmount).to.be.above(0);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "name": "OpenAPI Docs",
       "request": {
         "method": "GET",

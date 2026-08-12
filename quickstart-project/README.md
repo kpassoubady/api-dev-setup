@@ -37,23 +37,62 @@ Open `src/main/java/com/apidev/quickstart/QuickstartApplication.java` and click 
 ```bash
 curl http://localhost:8080/api/v1/health
 curl http://localhost:8080/api/v1/greetings/YourName
+curl "http://localhost:8080/api/v1/currency/usd-to-inr?amount=100"
 ```
 
-You should see:
+You should see something like:
 
 ```json
 {"status":"UP","service":"api-dev-quickstart"}
 {"message":"Hello, YourName! Your API dev setup is working."}
+{"from":"USD","to":"INR","amount":100.0,"rate":83.12,"convertedAmount":8312.0}
 ```
 
-Swagger UI (interactive API docs) is available at <http://localhost:8080/swagger-ui.html>.
+`rate` and `convertedAmount` vary slightly because the demo service adds a small random jitter.
+
+## API Documentation (Swagger UI & OpenAPI)
+
+This project includes `springdoc-openapi` 2.5.0, which automatically generates an OpenAPI 3.0 specification from your controllers at runtime. No separate generation step is needed — just start the app.
+
+### View the Interactive Docs
+
+| Renderer | URL | Style |
+| :--- | :--- | :--- |
+| **Swagger UI** | `http://localhost:8080/swagger-ui.html` | Interactive "try it out" console |
+| **Redoc** | `http://localhost:8080/redoc.html` | Clean three-panel reference layout |
+
+Both render the same OpenAPI spec served at `/api-docs`. The `redoc.html` page is included in `src/main/resources/static/`.
+
+### Fetch the Raw Spec
+
+```bash
+# JSON format
+curl http://localhost:8080/api-docs
+
+# YAML format
+curl http://localhost:8080/api-docs.yaml
+
+# Save to a file
+curl http://localhost:8080/api-docs -o openapi.json
+```
+
+### How It Works
+
+`springdoc-openapi-starter-webmvc-ui` introspects your `@RestController` classes on startup and serves the generated spec at `/api-docs` (JSON) and `/swagger-ui.html` (interactive console). These paths are configured in `src/main/resources/application.properties`:
+
+```properties
+springdoc.api-docs.path=/api-docs
+springdoc.swagger-ui.path=/swagger-ui.html
+```
+
+To enrich the generated spec with descriptions, examples, and error responses, add `@Operation`, `@ApiResponse`, and `@Parameter` annotations to your controller methods. See the course slides and `api-dev-companion/day2/concepts/springdoc-openapi.md` for the full annotation reference.
 
 ## Verify with Postman
 
 1. Open Postman.
 2. **Import** the collection at [`postman/api-dev-quickstart.postman_collection.json`](./postman/api-dev-quickstart.postman_collection.json).
 3. With the app running, click **Run** on the collection (or send each request individually).
-4. All three requests, `Health Check`, `Greeting`, and `OpenAPI Docs`, should return status `200` and pass their built-in tests.
+4. All four requests — `Health Check`, `Greeting`, `Currency Conversion`, and `OpenAPI Docs` — should return status `200` and pass their built-in tests.
 
 ## Run the JUnit5 Tests
 
@@ -65,7 +104,7 @@ mvn test
 
 Or in IntelliJ or VS Code: right-click the `src/test/java` folder and choose **Run 'All Tests'**.
 
-Both test classes (`HealthControllerTest`, `GreetingControllerTest`) should pass.
+All test classes (`HealthControllerTest`, `GreetingControllerTest`, `CurrencyControllerTest`, and `CurrencyConversionServiceTest`) should pass.
 
 ## Project Structure
 
@@ -78,14 +117,21 @@ quickstart-project/
     ├── main/
     │   ├── java/com/apidev/quickstart/
     │   │   ├── QuickstartApplication.java
-    │   │   └── controller/
-    │   │       ├── HealthController.java
-    │   │       └── GreetingController.java
+    │   │   ├── controller/
+    │   │   │   ├── HealthController.java
+    │   │   │   ├── GreetingController.java
+    │   │   │   └── CurrencyController.java
+    │   │   └── service/
+    │   │       └── CurrencyConversionService.java
     │   └── resources/application.properties
     └── test/
-        └── java/com/apidev/quickstart/controller/
-            ├── HealthControllerTest.java
-            └── GreetingControllerTest.java
+        └── java/com/apidev/quickstart/
+            ├── controller/
+            │   ├── HealthControllerTest.java
+            │   ├── GreetingControllerTest.java
+            │   └── CurrencyControllerTest.java
+            └── service/
+                └── CurrencyConversionServiceTest.java
 ```
 
 ## Troubleshooting
