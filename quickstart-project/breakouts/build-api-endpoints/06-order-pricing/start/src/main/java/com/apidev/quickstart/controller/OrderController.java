@@ -1,0 +1,28 @@
+package com.apidev.quickstart.controller;
+
+import com.apidev.quickstart.model.OrderRequest;
+import com.apidev.quickstart.model.OrderResponse;
+import com.apidev.quickstart.service.OrderPricingService;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/v1/orders")
+public class OrderController {
+
+    private final OrderPricingService orderPricingService;
+
+    public OrderController(OrderPricingService orderPricingService) {
+        this.orderPricingService = orderPricingService;
+    }
+
+    @PostMapping
+    public ResponseEntity<OrderResponse> create(@Valid @RequestBody OrderRequest request) {
+        // TODO: Delegate valid requests to OrderPricingService and return its response.
+        return ResponseEntity.status(501).build();
+    }
+}

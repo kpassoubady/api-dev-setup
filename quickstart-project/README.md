@@ -1,6 +1,6 @@
 # API Dev Quickstart
 
-A minimal Spring Boot REST API used to verify your installation for the **Fundamentals of API Development** course. It doesn't teach any course content by itself; it's just a fast way to confirm that Java, Maven, IntelliJ IDEA (or VS Code), and Postman are all working together before Day 1.
+A minimal Spring Boot REST API used to verify your installation for the **Fundamentals of API Development** course. The baseline application is a fast way to confirm that Java, Maven, IntelliJ IDEA (or VS Code), and Postman are working together before Day 1; optional lab assets remain separate under `breakouts/`.
 
 ## Prerequisites
 
@@ -107,6 +107,12 @@ mvn test
 Or in IntelliJ or VS Code: right-click the `src/test/java` folder and choose **Run 'All Tests'**.
 
 All test classes (`HealthControllerTest`, `GreetingControllerTest`, `CurrencyControllerTest`, `TemperatureControllerTest`, and `CurrencyConversionServiceTest`) should pass.
+
+## Optional Day 3 Breakout
+
+After completing the baseline setup, teams may choose one challenge in the
+[Build API Endpoints breakout](./breakouts/build-api-endpoints/README.md). The lab assets are separate from the
+baseline source and include starter tests, AI prompts, and reference solutions.
 
 ## Project Structure
 
