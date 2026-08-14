@@ -62,6 +62,17 @@ The starter compiles. Its acceptance tests fail because the seven TODOs are inco
 
 Tests supply the training passwords `member-pass` and `underwriter-pass`; production code reads them from environment variables rather than storing credentials in source. HTTP Basic and in-memory users are local lab substitutes for the OAuth2/OIDC and short-lived tokens a financial API should use in production.
 
+### Swagger UI Authentication
+
+When testing the application via Swagger UI or command-line tools like `curl`, use the following Basic Authentication credentials:
+
+- **Member Access** (can access `/api/v1/**` and `/api/v2/**`)
+  - **Username:** `member`
+  - **Password:** The value of your `CAPSTONE_MEMBER_PASSWORD` environment variable (tests use `member-pass`)
+- **Underwriter Access** (can access `/api/v1/**`, `/api/v2/**`, and `/api/v3/**`)
+  - **Username:** `underwriter`
+  - **Password:** The value of your `CAPSTONE_UNDERWRITER_PASSWORD` environment variable (tests use `underwriter-pass`)
+
 ## Basic, intermediate, and stretch goals
 
 ### Basic: lifecycle and contracts
