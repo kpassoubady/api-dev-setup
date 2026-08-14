@@ -114,6 +114,10 @@ After completing the baseline setup, teams may choose one challenge in the
 [Build API Endpoints breakout](./breakouts/build-api-endpoints/README.md). The lab assets are separate from the
 baseline source and include starter tests, AI prompts, and reference solutions.
 
+## Day 4 Capstone
+
+Use the [Card Applications API Capstone](./breakouts/capstone/README.md) for the single 60-minute Day 4 breakout. Its isolated `start/` and `solution/` projects apply versioning, `v1` retirement, OpenAPI, Spring Security, role authorization, rate limiting, validation, and JUnit5/MockMvc tests without changing the installation-verification baseline.
+
 ## Project Structure
 
 ```text
